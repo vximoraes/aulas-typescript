@@ -39,7 +39,7 @@ tsc -v
 npm install -g nodemon
 ```
 
-## 🛠️ Criando o projeto TypeScript
+## 💻 Criando o projeto TypeScript
 - 📁 Ir até o diretório do projeto.
 - ```bash
   npm init -y
