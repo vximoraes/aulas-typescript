@@ -51,37 +51,49 @@ let vilhena: Cidade = {
     estado: Uf.RO
 }
 
+interface Endereco {
+    logradouro: Logradouro,
+    numero: number,
+    bairro: string
+    cidade?: Cidade,
+    UF?: Uf
+}
+
+let endereco: Endereco = {
+    logradouro: Logradouro.Avenida,
+    numero: 3840,
+    bairro: 'Centro',
+    cidade: vilhena,
+    UF: Uf.RO
+}
+
 interface Estudante {
     nome: string,
-    endereco?: {
-        logradouro: Logradouro,
-        numero: number,
-        bairro: string
-    },
-    cidade?: Cidade,
-    UF?: Uf,
     dataNascimento: Date,
-    dataDeCadastro: Date
+    dataDeCadastro: Date,
+    logradouro: Logradouro,
+    numero: Endereco,
+    bairro: Endereco
+    cidade: Endereco,
+    UF: Uf
 }
 
 let estudante: Estudante = {
     nome: 'Vinícius Almeida Moraes',
-    endereco: {
-        logradouro: Logradouro.Avenida,
-        numero: 3840,
-        bairro: 'Centro'
-    },
-    cidade: vilhena,
-    UF: Uf.RO,
     dataNascimento: new Date('2005-06-23'),
-    dataDeCadastro: new Date('2024-11-04')
+    dataDeCadastro: new Date('2024-11-04'),
+    logradouro: endereco.logradouro,
+    numero: endereco,
+    bairro: endereco,
+    cidade: endereco,
+    UF: Uf.RO
 }
 
 console.log(`Nome: ${estudante.nome}
-Logradouro: ${estudante.endereco?.logradouro}
-Número: ${estudante.endereco?.numero}
-Bairro: ${estudante.endereco?.bairro}
-Cidade: ${estudante.cidade?.nome}
+Logradouro: ${estudante.logradouro}
+Número: ${estudante.numero.numero}
+Bairro: ${estudante.bairro.bairro}
+Cidade: ${estudante.cidade.cidade?.nome}
 UF: ${estudante.UF}
 Data de Nascimento: ${estudante.dataNascimento.getDate() + 1}/${estudante.dataNascimento.getMonth() + 1}/${estudante.dataNascimento.getFullYear()}
 Data de Cadastro: ${estudante.dataDeCadastro.getDate() + 1}/${estudante.dataDeCadastro.getMonth() + 1}/${estudante.dataDeCadastro.getFullYear()}`)
