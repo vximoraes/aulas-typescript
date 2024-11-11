@@ -216,3 +216,709 @@ let resultado = condição1 ? valor1 : condição2 ? valor2 : valor3;
 ```
 
 ---
+
+# 🏷️ Objetos
+
+## 🔍 O que é um Objeto?
+
+Um **objeto** em JavaScript e TypeScript é uma coleção de propriedades e valores. Cada propriedade é composta por uma chave (nome) e um valor associado. Objetos permitem agrupar dados de forma estruturada e são fundamentais para a programação orientada a objetos.
+
+A sintaxe básica para criar um objeto é:
+
+```typescript
+let pessoa = {
+  nome: "João",
+  idade: 25,
+  profissao: "Desenvolvedor"
+};
+```
+Neste exemplo, `pessoa` é um objeto com três propriedades: `nome`, `idade` e `profissao`.
+
+## 🛠️ Como Funciona
+
+Um objeto é definido dentro de chaves `{}` e contém pares chave-valor. As chaves são sempre strings, e os valores podem ser de qualquer tipo de dado, como números, strings, arrays, ou até outros objetos.
+
+Exemplo:
+
+```typescript
+let carro = {
+  modelo: "Fusca",
+  cor: "azul",
+  ano: 1979,
+  dono: {
+    nome: "Maria",
+    idade: 34
+  }
+};
+```
+Aqui, o objeto `carro` tem propriedades de diferentes tipos, incluindo o valor `dono`, que é outro objeto.
+
+## ✨ Exemplo de Uso
+
+### Acessando Propriedades
+
+As propriedades de um objeto podem ser acessadas de duas maneiras:
+
+1. **Notação de ponto:**
+```typescript
+let nome = pessoa.nome; // João
+console.log(nome);
+```
+2. **Notação de colchetes:**
+```typescript
+let idade = pessoa["idade"]; // 25
+console.log(idade);
+```
+
+### Modificando Propriedades
+
+As propriedades também podem ser modificadas:
+```typescript
+pessoa.idade = 26;
+console.log(pessoa.idade); // 26
+```
+
+Ou adicionar novas propriedades:
+```typescript
+pessoa.email = "joao@example.com";
+console.log(pessoa.email); // joao@example.com
+```
+
+### Métodos em Objetos
+Objetos também podem conter métodos (funções associadas a objetos):
+
+```typescript
+let pessoa = {
+  nome: "João",
+  idade: 25,
+  saudacao: function() {
+    return `Olá, meu nome é ${this.nome}`;
+  }
+};
+
+console.log(pessoa.saudacao()); // Olá, meu nome é João
+```
+
+## ⚡ Vantagens dos Objetos
+
+1. **Estruturação de dados:** Objetos permitem agrupar dados relacionados em um único local, facilitando o acesso e a manipulação.
+2. **Flexibilidade:** Podem armazenar diversos tipos de valores, incluindo funções (métodos), o que os torna extremamente úteis para modelar entidades e comportamentos.
+3. **Expansibilidade:** Podemos adicionar novas propriedades e métodos aos objetos dinamicamente durante a execução do programa.
+
+## ⚠️ Cuidados ao Usar
+
+1. **Modificação de Propriedades:** Modificar diretamente as propriedades de um objeto pode ser perigoso, especialmente se não for bem controlado. É recomendável usar boas práticas como a criação de métodos para controlar alterações em dados importantes.
+2. **Imutabilidade:** Objetos podem ser mutáveis, ou seja, seus valores podem ser alterados diretamente. Isso pode gerar efeitos colaterais indesejados em programas grandes. Considerar o uso de objetos imutáveis pode ajudar a evitar esses problemas.
+
+## 💻 Exemplos
+### Criando um Objeto Simples
+```typescript
+let livro = {
+  titulo: "O Senhor dos Anéis",
+  autor: "J.R.R. Tolkien",
+  ano: 1954
+};
+```
+
+### Objeto com Métodos
+```typescript
+let carro = {
+  modelo: "Fusca",
+  cor: "azul",
+  acelerar: function() {
+    console.log("O carro está acelerando!");
+  }
+};
+
+carro.acelerar(); // O carro está acelerando!
+```
+
+---
+
+# 🔑 Enums
+
+## 🔍 O que é um Enum?
+
+Em JavaScript e TypeScript, um **enum** (abreviação de "enumeração") é um tipo especial de objeto que permite definir um conjunto de valores nomeados. É usado para representar um conjunto fixo de constantes, proporcionando uma maneira de tornar o código mais legível e fácil de manter.
+
+No TypeScript, os enums ajudam a associar valores simbólicos a números ou strings. Eles são especialmente úteis quando se trabalha com estados ou categorias, como dias da semana, status de pedidos, etc.
+
+## 🛠️ Como Funciona
+
+Existem dois tipos principais de enums em TypeScript:
+
+1. **Enum numérico**: onde os valores são números.
+2. **Enum de string**: onde os valores são strings.
+
+### Enum numérico
+
+Por padrão, o primeiro valor de um enum numérico começa com 0, e cada valor subsequente é incrementado em 1, mas você pode definir explicitamente o valor de qualquer item.
+
+Exemplo:
+```typescript
+enum Cor {
+  Vermelho = 1,
+  Verde,
+  Azul
+}
+
+let minhaCor: Cor = Cor.Vermelho;
+console.log(minhaCor); // 1
+```
+Neste exemplo, Cor.Vermelho tem o valor 1, Cor.Verde tem o valor 2 e Cor.Azul tem o valor 3.
+
+### Enum de string
+
+Enums de string atribuem valores de string a cada item, tornando o código mais legível.
+
+Exemplo:
+```typescript
+enum Status {
+  Pendente = "Pendente",
+  Concluido = "Concluído",
+  Cancelado = "Cancelado"
+}
+
+let meuStatus: Status = Status.Concluido;
+console.log(meuStatus); // "Concluído"
+```
+Aqui, cada valor do enum é uma string, como "Pendente", "Concluído", ou "Cancelado".
+
+## ✨ Exemplo de Uso
+
+### Acessando Enum
+
+Você pode acessar os valores de um enum diretamente pelo nome da constante ou utilizando o valor correspondente.
+
+Exemplo:
+```typescript
+enum Direcao {
+  Cima = "CIMA",
+  Baixo = "BAIXO",
+  Esquerda = "ESQUERDA",
+  Direita = "DIREITA"
+}
+
+let movimento: Direcao = Direcao.Cima;
+console.log(movimento); // "CIMA"
+```
+Neste exemplo, o valor de movimento será "CIMA".
+
+### Iterando Sobre um Enum
+
+Você pode iterar sobre os valores de um enum utilizando um loop. Para enums numéricos, isso pode ser feito da seguinte forma:
+```typescript
+enum Nivel {
+  Baixo = 1,
+  Medio,
+  Alto
+}
+
+for (let nivel in Nivel) {
+  console.log(`${nivel}: ${Nivel[nivel]}`);
+}
+```
+
+Para enums de string, você pode iterar sobre os valores diretamente:
+```typescript
+enum Status {
+  Ativo = "Ativo",
+  Inativo = "Inativo"
+}
+
+for (let status in Status) {
+  console.log(`${status}: ${Status[status]}`);
+}
+```
+
+## ⚡ Vantagens dos Enums
+
+1. **Legibilidade:** Usar enums torna o código mais fácil de entender, pois substitui números mágicos ou strings arbitrárias por valores nomeados.
+2. **Manutenibilidade:** Enums centralizam os valores possíveis para uma variável, facilitando alterações no futuro, já que você não precisa buscar e substituir valores espalhados pelo código.
+3. **Segurança de Tipo:** Enums ajudam a evitar erros ao garantir que apenas valores válidos sejam atribuídos, especialmente quando usados com tipos específicos.
+
+## ⚠️ Cuidados ao Usar
+
+1. **Tamanho do Código:** Enums podem aumentar o tamanho do código, especialmente quando usados em excesso, uma vez que eles são traduzidos para objetos no JavaScript.
+2. **Limitações em JavaScript:** Enums não existem nativamente no JavaScript, então eles são uma feature do TypeScript. Ao compilar para JavaScript, o enum se transforma em um objeto, o que pode gerar algum comportamento inesperado em alguns casos.
+3. **Confusão com Objetos:** Embora enums sejam parecidos com objetos, eles têm um propósito semântico diferente e podem se comportar de maneira diferente, o que pode causar confusão.
+
+## 💻 Exemplos
+
+### Enum Simples
+```typescript
+enum DiaDaSemana {
+  Domingo = "Domingo",
+  Segunda = "Segunda",
+  Terça = "Terça",
+  Quarta = "Quarta",
+  Quinta = "Quinta",
+  Sexta = "Sexta",
+  Sabado = "Sábado"
+}
+```
+
+### Enum com Valor Numérico
+```typescript
+enum NivelDeAcesso {
+  Admin = 1,
+  Editor,
+  Viewer
+}
+```
+
+### Enum com Função
+```typescript
+enum FormaGeometrica {
+  Circulo = "Círculo",
+  Quadrado = "Quadrado",
+  Triangulo = "Triângulo"
+}
+
+function calcularArea(forma: FormaGeometrica): number {
+  switch (forma) {
+    case FormaGeometrica.Circulo:
+      return Math.PI * 5 * 5; // Exemplo de área de um círculo
+    case FormaGeometrica.Quadrado:
+      return 10 * 10; // Exemplo de área de um quadrado
+    case FormaGeometrica.Triangulo:
+      return (10 * 10) / 2; // Exemplo de área de um triângulo
+    default:
+      return 0;
+  }
+}
+
+console.log(calcularArea(FormaGeometrica.Circulo)); // Área do círculo
+```
+
+---
+
+# 📝 Interfaces
+
+## 🔍 O que é uma Interface?
+
+Em TypeScript, uma **interface** é uma maneira de definir a estrutura de um objeto. Ela descreve a forma de um objeto, incluindo os tipos e os nomes das propriedades. Interfaces ajudam a garantir que um objeto siga um determinado padrão, aumentando a segurança e a legibilidade do código.
+
+Interfaces podem ser usadas para definir contratos dentro do código, especificando as propriedades e métodos que uma classe ou objeto deve implementar, sem fornecer a implementação real.
+
+## 🛠️ Como Funciona
+
+Uma interface em TypeScript define apenas a **assinatura** de um objeto, mas não sua implementação. Ela pode ser usada para definir tipos de objetos, garantir que classes implementem métodos específicos, e até mesmo como parâmetros de funções.
+
+### Definindo uma Interface
+
+A sintaxe básica para definir uma interface é:
+
+```typescript
+interface NomeDaInterface {
+  propriedade1: tipo;
+  propriedade2: tipo;
+  metodo1(): tipoRetorno;
+}
+```
+
+Exemplo:
+
+```typescript
+interface Pessoa {
+  nome: string;
+  idade: number;
+  saudacao(): void;
+}
+```
+
+Neste exemplo, a interface `Pessoa` define que qualquer objeto ou classe que implemente essa interface deve ter:
+- Uma propriedade `nome` do tipo `string`.
+- Uma propriedade `idade` do tipo `number`.
+- Um método `saudacao` que não retorna nada (`void`).
+
+### Implementando uma Interface em uma Classe
+
+Uma classe pode implementar uma interface, o que significa que ela deve fornecer implementações para os métodos e propriedades definidos na interface.
+
+Exemplo:
+
+```typescript
+class Aluno implements Pessoa {
+  nome: string;
+  idade: number;
+
+  constructor(nome: string, idade: number) {
+    this.nome = nome;
+    this.idade = idade;
+  }
+
+  saudacao() {
+    console.log(`Olá, meu nome é ${this.nome} e eu tenho ${this.idade} anos.`);
+  }
+}
+```
+
+Aqui, a classe `Aluno` implementa a interface `Pessoa` e, portanto, deve definir as propriedades `nome` e `idade`, além do método `saudacao`.
+
+### Usando uma Interface com Funções
+
+Interfaces também podem ser usadas para descrever o tipo de uma função, incluindo os tipos de seus parâmetros e o valor de retorno.
+
+Exemplo:
+
+```typescript
+interface Calculadora {
+  soma(a: number, b: number): number;
+  subtrai(a: number, b: number): number;
+}
+
+class CalculadoraSimples implements Calculadora {
+  soma(a: number, b: number): number {
+    return a + b;
+  }
+
+  subtrai(a: number, b: number): number {
+    return a - b;
+  }
+}
+
+let calc = new CalculadoraSimples();
+console.log(calc.soma(5, 3));  // 8
+console.log(calc.subtrai(5, 3));  // 2
+```
+
+### Interfaces com Propriedades Opcionais
+
+Você pode tornar propriedades em uma interface opcionais, usando o operador `?`.
+
+Exemplo:
+
+```typescript
+interface Carro {
+  marca: string;
+  modelo: string;
+  cor?: string; // Propriedade opcional
+}
+
+let carro1: Carro = { marca: "Toyota", modelo: "Corolla" };
+let carro2: Carro = { marca: "Honda", modelo: "Civic", cor: "preto" };
+```
+
+Neste exemplo, a propriedade `cor` é opcional, ou seja, não é necessário incluir essa propriedade ao criar um objeto do tipo `Carro`.
+
+## ✨ Exemplo de Uso
+
+### Definindo e Usando Interfaces
+
+```typescript
+interface Produto {
+  nome: string;
+  preco: number;
+}
+
+function exibirProduto(produto: Produto): void {
+  console.log(`Produto: ${produto.nome}, Preço: R$${produto.preco}`);
+}
+
+const produto: Produto = { nome: "Camiseta", preco: 39.99 };
+exibirProduto(produto);
+```
+
+### Extending (Herança) de Interfaces
+
+Interfaces podem ser estendidas, o que significa que você pode criar uma interface que herda propriedades de outra.
+
+Exemplo:
+
+```typescript
+interface Funcionario {
+  nome: string;
+  salario: number;
+}
+
+interface Gerente extends Funcionario {
+  equipe: string[];
+}
+
+const gerente: Gerente = {
+  nome: "Carlos",
+  salario: 5000,
+  equipe: ["Ana", "Roberto", "Marcelo"]
+};
+
+console.log(gerente);
+```
+
+Neste exemplo, a interface `Gerente` estende `Funcionario`, o que significa que ela herda as propriedades `nome` e `salario`, além de adicionar a propriedade `equipe`.
+
+### Funções e Interfaces com Tipos de Retorno
+
+Interfaces podem ser usadas para definir funções com tipos de retorno específicos.
+
+```typescript
+interface Calculadora {
+  calcular(valor1: number, valor2: number): number;
+}
+
+class Soma implements Calculadora {
+  calcular(valor1: number, valor2: number): number {
+    return valor1 + valor2;
+  }
+}
+
+const soma = new Soma();
+console.log(soma.calcular(5, 3));  // 8
+```
+
+## ⚡ Vantagens das Interfaces
+
+1. **Contratos Claros**: As interfaces ajudam a definir contratos claros para objetos e classes, garantindo que os mesmos sigam uma estrutura específica.
+   
+2. **Reusabilidade**: Com interfaces, você pode reutilizar definições de tipo e garantir que diferentes classes ou objetos sigam a mesma estrutura.
+
+3. **Segurança de Tipo**: Interfaces aumentam a segurança de tipo, garantindo que objetos e classes tenham as propriedades e métodos esperados, prevenindo erros.
+
+## ⚠️ Cuidados ao Usar
+
+1. **Complexidade Excessiva**: Interfaces podem aumentar a complexidade do código, especialmente se utilizadas de maneira excessiva.
+
+2. **Falta de Implementação**: Como interfaces não fornecem uma implementação concreta, pode ser mais difícil entender como os métodos são realmente executados sem verificar a classe que os implementa.
+
+3. **Herança Complexa**: A herança de interfaces pode levar a uma hierarquia complexa, o que pode ser difícil de gerenciar em sistemas grandes.
+
+## 💻 Exemplos
+
+### Interface Simples
+
+```typescript
+interface Produto {
+  nome: string;
+  preco: number;
+}
+
+let produto: Produto = { nome: "Camiseta", preco: 39.99 };
+```
+
+### Interface com Função
+
+```typescript
+interface Saudacao {
+  mensagem(nome: string): string;
+}
+
+const saudacao: Saudacao = {
+  mensagem(nome: string) {
+    return `Olá, ${nome}!`;
+  }
+};
+
+console.log(saudacao.mensagem("Carlos"));
+```
+
+---
+
+# 📅 Date
+
+## 🔍 O que é o Tipo Date?
+
+Em JavaScript e TypeScript, o tipo **Date** é utilizado para manipulação de datas e horários. Ele permite que você crie, leia e modifique instâncias de data e hora, facilitando o trabalho com dados temporais, como a data e hora atual, diferenças entre datas, ou a formatação de datas para exibição.
+
+A classe `Date` é uma instância do objeto global que possui métodos que permitem a manipulação de datas e horários.
+
+## 🛠️ Criando uma Instância de Date
+
+Você pode criar um objeto `Date` de várias maneiras, dependendo de como deseja manipular a data:
+
+### 1. **Data e Hora Atual**
+
+Para criar um objeto `Date` com a data e hora atuais, basta instanciar o objeto sem parâmetros:
+
+```typescript
+const dataAtual = new Date();
+console.log(dataAtual);  // Exibe a data e hora atuais
+```
+
+### 2. **Data Específica**
+
+Você pode criar um objeto `Date` a partir de uma data específica, fornecendo uma string ou valores individuais de ano, mês, dia, hora, minuto, segundo e milissegundo:
+
+```typescript
+const dataEspecifica = new Date("2024-11-11T10:00:00");
+console.log(dataEspecifica);  // Exibe 11 de Novembro de 2024 às 10:00
+```
+
+Ou, passando parâmetros numéricos:
+
+```typescript
+const dataNumerica = new Date(2024, 10, 11, 10, 0, 0);  // Ano, Mês (0-indexed), Dia, Hora, Minuto, Segundo
+console.log(dataNumerica);  // Exibe 11 de Novembro de 2024 às 10:00
+```
+
+### 3. **Data com Timestamp (milissegundos desde 1970)**
+
+Você também pode criar um `Date` a partir de um timestamp, que é o número de milissegundos que se passaram desde a meia-noite de 1º de janeiro de 1970 (Epoch Time):
+
+```typescript
+const dataComTimestamp = new Date(1672531199000);  // Timestamp em milissegundos
+console.log(dataComTimestamp);  // Exibe a data correspondente ao timestamp
+```
+
+## ✨ Métodos Comuns de Date
+
+Aqui estão alguns métodos úteis para manipulação de datas com a classe `Date`:
+
+### 1. **getDate()** – Obter o Dia do Mês
+
+```typescript
+const data = new Date();
+console.log(data.getDate());  // Exibe o dia do mês (1-31)
+```
+
+### 2. **getMonth()** – Obter o Mês (0-11)
+
+Lembre-se que os meses começam a partir de 0 (Janeiro = 0, Fevereiro = 1, etc).
+
+```typescript
+console.log(data.getMonth());  // Exibe o mês atual (0-11)
+```
+
+### 3. **getFullYear()** – Obter o Ano
+
+```typescript
+console.log(data.getFullYear());  // Exibe o ano completo (ex: 2024)
+```
+
+### 4. **getHours()** – Obter as Horas
+
+```typescript
+console.log(data.getHours());  // Exibe as horas (0-23)
+```
+
+### 5. **getMinutes()** – Obter os Minutos
+
+```typescript
+console.log(data.getMinutes());  // Exibe os minutos (0-59)
+```
+
+### 6. **getSeconds()** – Obter os Segundos
+
+```typescript
+console.log(data.getSeconds());  // Exibe os segundos (0-59)
+```
+
+### 7. **getMilliseconds()** – Obter os Milissegundos
+
+```typescript
+console.log(data.getMilliseconds());  // Exibe os milissegundos (0-999)
+```
+
+### 8. **getDay()** – Obter o Dia da Semana (0-6)
+
+Este método retorna o dia da semana (0 = Domingo, 1 = Segunda-feira, etc.).
+
+```typescript
+console.log(data.getDay());  // Exibe o dia da semana (0-6)
+```
+
+### 9. **getTime()** – Obter o Timestamp
+
+```typescript
+console.log(data.getTime());  // Exibe o número de milissegundos desde 1º de Janeiro de 1970
+```
+
+### 10. **setDate()** – Modificar o Dia do Mês
+
+```typescript
+data.setDate(15);  // Define o dia do mês como 15
+console.log(data);
+```
+
+### 11. **setMonth()** – Modificar o Mês
+
+```typescript
+data.setMonth(4);  // Define o mês como Maio (0 = Janeiro)
+console.log(data);
+```
+
+### 12. **setFullYear()** – Modificar o Ano
+
+```typescript
+data.setFullYear(2025);  // Define o ano como 2025
+console.log(data);
+```
+
+### 13. **setHours()** – Modificar as Horas
+
+```typescript
+data.setHours(8);  // Define as horas como 8
+console.log(data);
+```
+
+### 14. **setMinutes()** – Modificar os Minutos
+
+```typescript
+data.setMinutes(30);  // Define os minutos como 30
+console.log(data);
+```
+
+## 🔄 Comparando Datas
+
+Você pode comparar duas instâncias de `Date` com operadores como `>`, `<` e `===`.
+
+Exemplo:
+
+```typescript
+const data1 = new Date("2024-11-11");
+const data2 = new Date("2025-01-01");
+
+console.log(data1 < data2);  // Exibe true, pois 2024-11-11 é anterior a 2025-01-01
+```
+
+## ✨ Formatação de Data
+
+Para formatar datas de forma mais legível, você pode usar o método `toLocaleDateString()`:
+
+```typescript
+const dataFormatada = data.toLocaleDateString("pt-BR");
+console.log(dataFormatada);  // Exibe a data formatada como "11/11/2024"
+```
+
+Você também pode passar opções de formatação:
+
+```typescript
+const dataFormatadaPersonalizada = data.toLocaleDateString("pt-BR", {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+console.log(dataFormatadaPersonalizada);  // Exibe algo como "segunda-feira, 11 de novembro de 2024"
+```
+
+## 🛠️ Exemplo de Uso
+
+### Adicionando 5 Dias à Data Atual
+
+```typescript
+const data = new Date();
+data.setDate(data.getDate() + 5);  // Adiciona 5 dias
+console.log(data);
+```
+
+### Subtraindo 1 Mês da Data Atual
+
+```typescript
+const data = new Date();
+data.setMonth(data.getMonth() - 1);  // Subtrai 1 mês
+console.log(data);
+```
+
+## ⚡ Vantagens do Uso de Date
+
+1. **Manipulação de Tempo**: A classe `Date` fornece uma maneira simples e eficaz de manipular datas e horários em JavaScript e TypeScript.
+   
+2. **Compatibilidade**: O tipo `Date` é amplamente suportado por todos os navegadores modernos e ambientes JavaScript, como Node.js.
+
+3. **Facilidade de Comparação**: Comparar datas se torna simples utilizando os métodos e operadores padrão.
+
+## ⚠️ Cuidados ao Usar
+
+1. **Timezone**: O tipo `Date` pode ser afetado por diferentes fusos horários. É importante garantir que você está lidando corretamente com fusos horários ao trabalhar com `Date` para evitar discrepâncias.
+
+2. **Formato de Data**: O formato de exibição da data pode variar dependendo do navegador ou ambiente, por isso, é recomendável formatar explicitamente a data ao exibi-la para o usuário.
