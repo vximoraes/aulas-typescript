@@ -922,3 +922,48 @@ console.log(data);
 1. **Timezone**: O tipo `Date` pode ser afetado por diferentes fusos horários. É importante garantir que você está lidando corretamente com fusos horários ao trabalhar com `Date` para evitar discrepâncias.
 
 2. **Formato de Data**: O formato de exibição da data pode variar dependendo do navegador ou ambiente, por isso, é recomendável formatar explicitamente a data ao exibi-la para o usuário.
+
+---
+
+# 🚀 Node, NPM, Pacotes (Instalação) e Nodemon
+
+## 🌱 O que é o Node.js?
+
+O **Node.js** é um ambiente de execução para JavaScript no lado do servidor. Ele permite que você escreva aplicações de servidor usando JavaScript, que normalmente é usado apenas no navegador. O Node.js é altamente eficiente, pois é baseado em um modelo de I/O não-bloqueante, o que significa que pode lidar com múltiplas requisições simultâneas sem ficar esperando por uma resposta antes de passar para a próxima.
+
+### 🌍 Vantagens do Node.js:
+- **Assíncrono e não-bloqueante:** Node.js usa operações assíncronas, tornando-o ideal para aplicações de rede e servidores com alta demanda de conexões simultâneas.
+- **JavaScript no Backend:** Você pode usar a mesma linguagem tanto no cliente quanto no servidor.
+- **Ecosistema rico:** Node.js tem uma vasta gama de pacotes e bibliotecas através do NPM, o que facilita o desenvolvimento de diversos tipos de aplicações.
+
+## 📦 O que é o NPM?
+
+O **NPM** (Node Package Manager) é o gerenciador de pacotes oficial do Node.js. Ele permite instalar, atualizar e gerenciar bibliotecas e pacotes que você pode usar no seu projeto Node.js. O NPM também facilita o gerenciamento de dependências e scripts no seu projeto.
+
+### 🛠️ Comandos principais do NPM:
+- **`npm install <pacote>`:** Instala pacotes e suas dependências.
+- **`npm uninstall <pacote>`:** Remove pacotes do seu projeto.
+- **`npm init` ou `npm init -y`**: Inicializa um novo projeto Node.js criando o arquivo `package.json`, onde as dependências e configurações do projeto são armazenadas.
+- **`npm update`**: Atualiza os pacotes instalados para as versões mais recentes.
+
+### 📂 O arquivo `package.json`:
+Este arquivo contém todas as informações do seu projeto, incluindo as dependências (pacotes), scripts, versão do projeto e outras configurações essenciais. O `package.json` é fundamental para qualquer projeto Node.js, pois define como as dependências devem ser gerenciadas e as versões de pacotes utilizadas.
+
+## ⏩ O que é o Nodemon?
+
+O **Nodemon** é uma ferramenta que ajuda a automatizar o processo de reiniciar o servidor Node.js sempre que um arquivo do projeto é modificado. Em vez de ter que parar e iniciar o servidor manualmente a cada alteração no código, o Nodemon observa os arquivos e reinicia o servidor automaticamente.
+
+### 🔧 Como usar o Nodemon:
+- **Instalação global:** Para instalar o Nodemon globalmente no seu sistema, use o comando:
+```bash
+npm install -g nodemon
+```
+- **Executar com Nodemon:** Depois de instalado, você pode usar o Nodemon para iniciar o servidor. Em vez de rodar node index.js, você rodaria:
+```bash
+nodemon index.js
+```
+Isso fará com que o Nodemon observe alterações no seu código e reinicie automaticamente o servidor sempre que uma mudança for detectada.
+
+### 🎯 Vantagens do Nodemon:
+- **Reinício automático:** Nodemon reinicia o servidor automaticamente sempre que uma mudança nos arquivos é detectada, facilitando o desenvolvimento sem a necessidade de reiniciar manualmente.
+- **Configuração simples:** Basta substituir o comando node por nodemon na linha de execução do seu projeto.
