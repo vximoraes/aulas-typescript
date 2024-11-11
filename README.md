@@ -1,11 +1,12 @@
-# 🔷 O que é TypeScript?
+# 🔷 TypeScript
 1. [🛠️ Para que serve?](#-para-que-serve)
 2. [✨ Vantagens do TypeScript](#-vantagens-do-typescript)
 3. [⚠️ Desvantagens do TypeScript](#-desvantagens-do-typescript)
 4. [🎯 Conclusão](#-conclusão)
    - [Quando Usar TypeScript?](#quando-usar-typescript)
    - [Quando Não Usar?](#quando-não-usar)
-
+     
+## 🔍 O que é TypeScript?
 **TypeScript** é um *superset* do JavaScript, desenvolvido pela Microsoft, que adiciona tipagem estática opcional ao JavaScript. Ele se comporta como uma linguagem de programação independente que, no final, é compilada para JavaScript puro, para ser executado em navegadores ou em ambientes como Node.js.
 
 - **Superset**: Significa que o TypeScript contém todas as funcionalidades do JavaScript e, além disso, adiciona novos recursos como tipagem estática, interfaces, e classes mais avançadas.
