@@ -970,7 +970,7 @@ Isso fará com que o Nodemon observe alterações no seu código e reinicie auto
 
 ---
 
-# 🚀 Dev, Build, Deploy
+# 🧰 Dev, Build, Deploy
 
 ## 🛠️ O que é o comando "dev"?
 
