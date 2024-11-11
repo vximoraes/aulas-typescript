@@ -140,3 +140,79 @@ numero = "quarenta e dois"; // Error: Type 'string' is not assignable to type 'n
 ```
 
 - **Autocompletar**: Editores de código como VSCode oferecem melhores sugestões e completam o código automaticamente, facilitando o desenvolvimento.
+
+---
+
+# 🔀 Ternários
+
+## 🔍 O que é um Operador Ternário?
+
+O **operador ternário** é uma forma curta de escrever uma expressão condicional em JavaScript e TypeScript. Ele permite executar uma condição de maneira mais concisa, substituindo o tradicional bloco `if-else`.
+
+A sintaxe é composta de três partes, por isso o nome "ternário":
+```typescript
+condição ? expressão1 : expressão2;
+```
+Se a condição for verdadeira, o valor de expressão1 será retornado; caso contrário, expressão2 será retornado.
+
+## 🛠️ Como Funciona
+
+- **Condição:** A expressão booleana a ser avaliada.
+- **Expressão1:** Executada se a condição for verdadeira (true).
+- **Expressão2:** Executada se a condição for falsa (false).
+
+É uma maneira compacta de escrever o if-else tradicional, onde você precisa escolher entre duas opções.
+
+## ✨ Exemplo de Uso
+
+### Exemplo 1: Comparação simples
+Aqui está um exemplo em TypeScript, onde o operador ternário decide se uma pessoa é adulta ou não:
+
+```typescript
+let idade: number = 18;
+let status: string = (idade >= 18) ? "Adulto" : "Menor de idade";
+console.log(status); // Adulto
+```
+
+### Exemplo 2: Verificação em tempo real
+Usando o operador ternário para exibir mensagens de status dinâmicas:
+
+``` typescript
+let online: boolean = true;
+let mensagem: string = online ? "Usuário está online" : "Usuário está offline";
+console.log(mensagem); // Usuário está online
+```
+
+## ⚡ Vantagens do Operador Ternário
+
+Sintaxe mais curta: Substitui múltiplas linhas de if-else por uma única linha.
+
+### Exemplo:
+```typescript
+// Usando if-else
+if (idade >= 18) {
+  status = "Adulto";
+} else {
+  status = "Menor de idade";
+}
+
+// Usando ternário
+status = (idade >= 18) ? "Adulto" : "Menor de idade";
+```
+
+Código mais legível: Para verificações simples, o ternário pode tornar o código mais limpo e fácil de ler, especialmente em comparações simples.
+
+## ⚠️ Cuidados ao Usar
+
+### 1. **Excessos** 
+O uso excessivo de operadores ternários pode comprometer a legibilidade do código, especialmente em expressões complexas. Se a lógica se tornar muito complicada, é melhor usar if-else para manter a clareza.
+
+### 2. **Aninhamento** 
+Evite o aninhamento de múltiplos operadores ternários, pois isso pode tornar o código confuso e difícil de manter.
+
+- Exemplo a ser evitado:
+```typescript
+let resultado = condição1 ? valor1 : condição2 ? valor2 : valor3;
+```
+
+---
