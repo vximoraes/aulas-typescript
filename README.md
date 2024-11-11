@@ -69,10 +69,25 @@ npm install -g nodemon
   ```
 
 ## 🔧 Configuração do tsconfig.json
-_Está na linha 60. do tsconfig.json_
 ```bash
   "outDir": "./dist"
   ```
+```bash
+  "noEmitOnError": true
+  ```
+```bash
+  "strict": true
+  ```
+```bash
+  "noUnusedLocals": true
+  ```
+```bash
+  "noUnusedParameters": true
+  ```
+```bash
+  "noImplicitReturns": true
+  ```
+
 
 ## 🏃‍♂️ Executando o projeto
 ### 🛠️ Em desenvolvimento: 
