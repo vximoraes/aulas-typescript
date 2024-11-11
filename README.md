@@ -990,8 +990,6 @@ npm run dev
 ```
 Isso iniciará o servidor e o monitorará para qualquer alteração nos arquivos do projeto, automaticamente reiniciando o servidor quando necessário.
 
----
-
 ## 🏗️ O que é o comando "build"?
 
 O comando **"build"** é utilizado para compilar o código-fonte TypeScript para JavaScript. O TypeScript é um superconjunto do JavaScript, então o código precisa ser compilado para ser executado no ambiente de produção.
@@ -1011,8 +1009,6 @@ npm run build
 
 Isso criará os arquivos JavaScript na pasta `dist`, conforme a configuração do `tsconfig.json`.
 
----
-
 ## 🚀 O que é o comando "start"?
 
 O comando **"start"** é utilizado para executar a aplicação em produção. Depois de compilar o código TypeScript para JavaScript com o comando **"build"**, você pode rodar o código gerado em `dist/index.js` usando o comando **"start"**.
@@ -1031,8 +1027,6 @@ npm start
 ```
 O comando `npm start` é uma maneira prática de iniciar o processo principal de um projeto Node.js, seja rodando um servidor, um script de inicialização ou outras tarefas essenciais que foram configuradas no package.json.
 Esse comando inicia a aplicação sem o uso do Nodemon, já que é para o ambiente de produção e, normalmente, você não quer reiniciar o servidor a cada modificação no código.
-
----
 
 ## 📦 Resumo dos comandos no package.json
 
