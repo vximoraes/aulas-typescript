@@ -6,7 +6,6 @@
    - [Quando Usar TypeScript?](#quando-usar-typescript)
    - [Quando Não Usar?](#quando-não-usar)
 
-## 🔍 O que é um Operador Ternário?
 **TypeScript** é um *superset* do JavaScript, desenvolvido pela Microsoft, que adiciona tipagem estática opcional ao JavaScript. Ele se comporta como uma linguagem de programação independente que, no final, é compilada para JavaScript puro, para ser executado em navegadores ou em ambientes como Node.js.
 
 - **Superset**: Significa que o TypeScript contém todas as funcionalidades do JavaScript e, além disso, adiciona novos recursos como tipagem estática, interfaces, e classes mais avançadas.
