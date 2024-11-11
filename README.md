@@ -1,5 +1,12 @@
 # 🔷 O que é TypeScript?
+1. [🛠️ Para que serve?](#-para-que-serve)
+2. [✨ Vantagens do TypeScript](#-vantagens-do-typescript)
+3. [⚠️ Desvantagens do TypeScript](#-desvantagens-do-typescript)
+4. [🎯 Conclusão](#-conclusão)
+   - [Quando Usar TypeScript?](#quando-usar-typescript)
+   - [Quando Não Usar?](#quando-não-usar)
 
+## 🔍 O que é um Operador Ternário?
 **TypeScript** é um *superset* do JavaScript, desenvolvido pela Microsoft, que adiciona tipagem estática opcional ao JavaScript. Ele se comporta como uma linguagem de programação independente que, no final, é compilada para JavaScript puro, para ser executado em navegadores ou em ambientes como Node.js.
 
 - **Superset**: Significa que o TypeScript contém todas as funcionalidades do JavaScript e, além disso, adiciona novos recursos como tipagem estática, interfaces, e classes mais avançadas.
@@ -99,6 +106,10 @@ O **TypeScript** é uma poderosa ferramenta para desenvolvedores JavaScript que 
 ---
 
 # 📝 Tipos de Dados
+1. [🔡 String](#-string)
+2. [🔢 Number](#-number)
+3. [🔘 Boolean](#-boolean)
+4. [✨ Benefícios de Tipagem Explícita](#-benefícios-de-tipagem-explícita)
 
 ## 🔡 String
 
@@ -144,6 +155,15 @@ numero = "quarenta e dois"; // Error: Type 'string' is not assignable to type 'n
 ---
 
 # 🔀 Ternários
+1. [🔍 O que é um Operador Ternário?](#-o-que-é-um-operador-ternário)
+2. [🛠️ Como Funciona](#-como-funciona)
+3. [✨ Exemplo de Uso](#-exemplo-de-uso)
+   - [Exemplo 1: Comparação simples](#exemplo-1-comparação-simples)
+   - [Exemplo 2: Verificação em tempo real](#exemplo-2-verificação-em-tempo-real)
+4. [⚡ Vantagens do Operador Ternário](#-vantagens-do-operador-ternário)
+5. [⚠️ Cuidados ao Usar](#-cuidados-ao-usar)
+   - [1. Excessos](#1-excessos)
+   - [2. Aninhamento](#2-aninhamento)
 
 ## 🔍 O que é um Operador Ternário?
 
@@ -218,6 +238,19 @@ let resultado = condição1 ? valor1 : condição2 ? valor2 : valor3;
 ---
 
 # 🏷️ Objetos
+1. [🔍 O que é um Objeto?](#-o-que-é-um-objeto)
+2. [🛠️ Como Funciona](#-como-funciona)
+3. [✨ Exemplo de Uso](#-exemplo-de-uso)
+   - [Acessando Propriedades](#acessando-propriedades)
+   - [Modificando Propriedades](#modificando-propriedades)
+   - [Métodos em Objetos](#métodos-em-objetos)
+4. [⚡ Vantagens dos Objetos](#-vantagens-dos-objetos)
+5. [⚠️ Cuidados ao Usar](#-cuidados-ao-usar)
+   - [1. Modificação de Propriedades](#1-modificação-de-propriedades)
+   - [2. Imutabilidade](#2-imutabilidade)
+6. [💻 Exemplos](#-exemplos)
+   - [Criando um Objeto Simples](#criando-um-objeto-simples)
+   - [Objeto com Métodos](#objeto-com-métodos)
 
 ## 🔍 O que é um Objeto?
 
@@ -336,6 +369,22 @@ carro.acelerar(); // O carro está acelerando!
 ---
 
 # 🔑 Enums
+1. [🔍 O que é um Enum?](#-o-que-é-um-enum)
+2. [🛠️ Como Funciona](#-como-funciona)
+   - [Enum numérico](#enum-numérico)
+   - [Enum de string](#enum-de-string)
+3. [✨ Exemplo de Uso](#-exemplo-de-uso)
+   - [Acessando Enum](#acessando-enum)
+   - [Iterando Sobre um Enum](#iterando-sobre-um-enum)
+4. [⚡ Vantagens dos Enums](#-vantagens-dos-enums)
+5. [⚠️ Cuidados ao Usar](#-cuidados-ao-usar)
+   - [1. Tamanho do Código](#1-tamanho-do-código)
+   - [2. Limitações em JavaScript](#2-limitações-em-javascript)
+   - [3. Confusão com Objetos](#3-confusão-com-objetos)
+6. [💻 Exemplos](#-exemplos)
+   - [Enum Simples](#enum-simples)
+   - [Enum com Valor Numérico](#enum-com-valor-numérico)
+   - [Enum com Função](#enum-com-função)
 
 ## 🔍 O que é um Enum?
 
@@ -494,6 +543,21 @@ console.log(calcularArea(FormaGeometrica.Circulo)); // Área do círculo
 ---
 
 # 📝 Interfaces
+1. [🔍 O que é uma Interface?](#-o-que-é-uma-interface)
+2. [🛠️ Como Funciona](#-como-funciona)
+   - [Definindo uma Interface](#definindo-uma-interface)
+   - [Implementando uma Interface em uma Classe](#implementando-uma-interface-em-uma-classe)
+   - [Usando uma Interface com Funções](#usando-uma-interface-com-funções)
+   - [Interfaces com Propriedades Opcionais](#interfaces-com-propriedades-opcionais)
+3. [✨ Exemplo de Uso](#-exemplo-de-uso)
+   - [Definindo e Usando Interfaces](#definindo-e-usando-interfaces)
+   - [Extending (Herança) de Interfaces](#extending-herança-de-interfaces)
+   - [Funções e Interfaces com Tipos de Retorno](#funções-e-interfaces-com-tipos-de-retorno)
+4. [⚡ Vantagens das Interfaces](#-vantagens-das-interfaces)
+5. [⚠️ Cuidados ao Usar](#-cuidados-ao-usar)
+6. [💻 Exemplos](#-exemplos)
+   - [Interface Simples](#interface-simples)
+   - [Interface com Função](#interface-com-função)
 
 ## 🔍 O que é uma Interface?
 
@@ -714,6 +778,35 @@ console.log(saudacao.mensagem("Carlos"));
 ---
 
 # 📅 Date
+1. [🔍 O que é o Tipo Date?](#-o-que-é-o-tipo-date)
+2. [🛠️ Criando uma Instância de Date](#-criando-uma-instância-de-date)
+   - [Data e Hora Atual](#data-e-hora-atual)
+   - [Data Específica](#data-específica)
+   - [Data com Timestamp (milissegundos desde 1970)](#data-com-timestamp-milissegundos-desde-1970)
+3. [✨ Métodos Comuns de Date](#-métodos-comuns-de-date)
+   - [getDate()](#getdate)
+   - [getMonth()](#getmonth)
+   - [getFullYear()](#getfullyear)
+   - [getHours()](#gethours)
+   - [getMinutes()](#getminutes)
+   - [getSeconds()](#getseconds)
+   - [getMilliseconds()](#getmilliseconds)
+   - [getDay()](#getday)
+   - [getTime()](#gettime)
+   - [setDate()](#setdate)
+   - [setMonth()](#setmonth)
+   - [setFullYear()](#setfullyear)
+   - [setHours()](#sethours)
+   - [setMinutes()](#setminutes)
+4. [🔄 Comparando Datas](#-comparando-datas)
+5. [✨ Formatação de Data](#-formatação-de-data)
+6. [🛠️ Exemplo de Uso](#-exemplo-de-uso)
+   - [Adicionando 5 Dias à Data Atual](#adicionando-5-dias-à-data-atual)
+   - [Subtraindo 1 Mês da Data Atual](#subtraindo-1-mês-da-data-atual)
+7. [⚡ Vantagens do Uso de Date](#-vantagens-do-uso-de-date)
+8. [⚠️ Cuidados ao Usar](#-cuidados-ao-usar)
+   - [Timezone](#timezone)
+   - [Formato de Data](#formato-de-data)
 
 ## 🔍 O que é o Tipo Date?
 
@@ -926,6 +1019,15 @@ console.log(data);
 ---
 
 # 🚀 Node, NPM, Pacotes (Instalação) e Nodemon
+1. [🔍 O que é o Node.js?](#-o-que-é-o-nodejs)
+2. [🌍 Vantagens do Node.js](#-vantagens-do-nodejs)
+3. [📦 O que é o NPM?](#-o-que-é-o-npm)
+   - [Comandos principais do NPM](#comandos-principais-do-npm)
+   - [O arquivo package.json](#o-arquivo-packagejson)
+4. [⏩ O que é o Nodemon?](#-o-que-é-o-nodemon)
+   - [Como usar o Nodemon](#como-usar-o-nodemon)
+   - [Vantagens do Nodemon](#vantagens-do-nodemon)
+5. [🎯 Conclusão](#-conclusao)
 
 ## 🌱 O que é o Node.js?
 
@@ -971,6 +1073,13 @@ Isso fará com que o Nodemon observe alterações no seu código e reinicie auto
 ---
 
 # 🧰 Dev, Build, Deploy
+1. [🛠️ O que é o comando "dev"?](#-o-que-é-o-comando-dev)
+   - [Configuração do comando "dev"](##configuração-do-comando-dev)
+2. [🏗️ O que é o comando "build"?](#-o-que-é-o-comando-build)
+   - [Configuração do comando "build"](##configuração-do-comando-build)
+3. [🚀 O que é o comando "start"?](#-o-que-é-o-comando-start)
+   - [Configuração do comando "start"](##configuração-do-comando-start)
+4. [📦 Resumo dos comandos no package.json](#-resumo-dos-comandos-no-packagejson)
 
 ## 🛠️ O que é o comando "dev"?
 
