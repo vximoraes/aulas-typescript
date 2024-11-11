@@ -967,3 +967,83 @@ Isso fará com que o Nodemon observe alterações no seu código e reinicie auto
 ### 🎯 Vantagens do Nodemon:
 - **Reinício automático:** Nodemon reinicia o servidor automaticamente sempre que uma mudança nos arquivos é detectada, facilitando o desenvolvimento sem a necessidade de reiniciar manualmente.
 - **Configuração simples:** Basta substituir o comando node por nodemon na linha de execução do seu projeto.
+
+---
+
+# 🚀 Dev, Build, Deploy
+
+## 🛠️ O que é o comando "dev"?
+
+O comando **"dev"** é utilizado para rodar a aplicação em ambiente de desenvolvimento. Ele normalmente está configurado no arquivo `package.json` para usar o **Nodemon**, que é uma ferramenta que reinicia automaticamente o servidor quando mudanças no código são detectadas. Esse comando facilita o desenvolvimento, pois não é necessário reiniciar manualmente o servidor sempre que há alterações no código.
+
+### 🔧 Configuração do comando "dev":
+O comando **"dev"** está configurado para rodar o Nodemon com o arquivo de entrada `src/index.ts`, que é onde o código TypeScript será executado:
+```bash
+"scripts": {
+  "dev": "nodemon src/index.ts"
+}
+```
+
+Para rodar o projeto em modo de desenvolvimento, basta usar:
+```bash
+npm run dev
+```
+Isso iniciará o servidor e o monitorará para qualquer alteração nos arquivos do projeto, automaticamente reiniciando o servidor quando necessário.
+
+---
+
+## 🏗️ O que é o comando "build"?
+
+O comando **"build"** é utilizado para compilar o código-fonte TypeScript para JavaScript. O TypeScript é um superconjunto do JavaScript, então o código precisa ser compilado para ser executado no ambiente de produção.
+
+### 🔧 Configuração do comando "build":
+No arquivo `package.json`, o comando **"build"** usa o compilador TypeScript (`tsc`) para transformar o código TypeScript em JavaScript. A configuração pode ser vista abaixo:
+```bash
+"scripts": {
+  "build": "tsc"
+}
+```
+
+Para gerar os arquivos JavaScript a partir do código TypeScript, basta rodar o comando:
+```bash
+npm run build
+```
+
+Isso criará os arquivos JavaScript na pasta `dist`, conforme a configuração do `tsconfig.json`.
+
+---
+
+## 🚀 O que é o comando "start"?
+
+O comando **"start"** é utilizado para executar a aplicação em produção. Depois de compilar o código TypeScript para JavaScript com o comando **"build"**, você pode rodar o código gerado em `dist/index.js` usando o comando **"start"**.
+
+### 🔧 Configuração do comando "start":
+No arquivo `package.json`, o comando **"start"** é configurado para rodar o arquivo JavaScript compilado:
+```bash
+"scripts": {
+  "start": "node dist/index.js"
+}
+```
+
+Para rodar o projeto em produção (usando o código compilado), basta usar:
+```bash
+npm start
+```
+O comando `npm start` é uma maneira prática de iniciar o processo principal de um projeto Node.js, seja rodando um servidor, um script de inicialização ou outras tarefas essenciais que foram configuradas no package.json.
+Esse comando inicia a aplicação sem o uso do Nodemon, já que é para o ambiente de produção e, normalmente, você não quer reiniciar o servidor a cada modificação no código.
+
+---
+
+## 📦 Resumo dos comandos no package.json
+
+Aqui está um resumo das configurações no arquivo `package.json` para os comandos **dev**, **build** e **start**:
+
+```bash
+"scripts": {
+  "dev": "nodemon src/index.ts",  # Para rodar o projeto em desenvolvimento
+  "build": "tsc",                 # Para compilar o código TypeScript para JavaScript
+  "start": "node dist/index.js"   # Para rodar o projeto em produção (usando o código compilado)
+}
+```
+
+Com esses comandos, você pode facilmente alternar entre os diferentes ambientes de desenvolvimento e produção, facilitando o fluxo de trabalho.
