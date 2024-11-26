@@ -1,18 +1,22 @@
 import { v4 as uuid } from 'uuid'
 const idUser: string = uuid()
 
+// Enum de cargos.
 enum Role {
     ADMIN = "Admin",
     USER = "User",
-    GUEST = "Guest"
+    GUEST = "Guest",
+    SLA = "Sla"
 }
 
+// Interface de um Usuário.
 interface User {
     id: string
     nome: string
     role: Role
 }
 
+// Array de usuários.
 const usersList: User[] = [
     { id: idUser, nome: "Vinícius Almeida Moraes"    , role: Role.ADMIN },
     { id: idUser, nome: "Micaelly Nascimento Queiroz", role: Role.GUEST },
@@ -20,14 +24,17 @@ const usersList: User[] = [
     { id: idUser, nome: "Mica", role: Role.USER },
 ]  
 
-function roleFilter(userRole: Role){
-    const filteredUsers: User[] = usersList.filter((user) => user.role == userRole)
+// Listar usuários filtrados pelo cargo.
+function roleFilter(userRole: Role) {
+    const filterUsers: User[] = usersList.filter((user) => user.role == userRole)
 
-    if (filteredUsers) {
+    if (filterUsers.length > 0) {
         console.log('\n-------------------------| USERS |-------------------------\n')
-        filteredUsers.forEach((user) => console.log(`Id: ${user.id} \nNome: ${user.nome} \nRole: ${user.role}\n`))
+        filterUsers.forEach((user) => console.log(`Id: ${user.id} \nNome: ${user.nome} \nRole: ${user.role}\n`))
         console.log('-------------------------------------------------------\n')
+    } else {
+        console.log('Nenhum usuário possui este cargo.')
     }
 }
 
-roleFilter(Role.USER)
+roleFilter(Role.ADMIN)

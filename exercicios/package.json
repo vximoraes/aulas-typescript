@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/produtos.ts",
+    "dev": "nodemon src/index.ts",
     "start": "node dist/index.js",
     "build": "tsc"
   },
@@ -13,6 +13,7 @@
   "description": "",
   "dependencies": {
     "chalk": "^4.1.2",
+    "nodemon": "^3.1.7",
     "ts-node": "^10.9.2",
     "uuid": "^11.0.3"
   }
