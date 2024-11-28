@@ -89,3 +89,9 @@ inventario.listarProdutos()
 // Imprimindo o valor total do inventário após excluir o Produto3.
 
 inventario.getValorTotal()
+
+export { Produto }
+export { Inventario }
+export { produto1 }
+export { produto2 }
+export { produto3 }
