@@ -69,12 +69,13 @@ Implemente uma função para converter valores entre diferentes moedas usando um
 
 2.Crie um objeto exchangeRates que mapeia as taxas de câmbio (em relação ao Real). Exemplo:
 
-bash ```
+```
 const exchangeRates = {
   USD: 5.25,
   EUR: 5.9,
   BRL: 1
-};```
+};
+```
 
 3.Implemente uma função convertCurrency(amount: number, from: Currency, to: Currency): number que:
 
