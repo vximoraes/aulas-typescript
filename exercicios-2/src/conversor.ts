@@ -1,7 +1,7 @@
 enum Currency {
-    USD = 'Dólar Americano',
-    EUR = 'Euro',
-    BRL = 'Real Brasileiro'
+    USD = 'USD',
+    EUR = 'EUR',
+    BRL = 'BRL'
 }
 
 const exchangeRates = {
@@ -11,8 +11,14 @@ const exchangeRates = {
 }
 
 function convertCurrency(amount: number, from: Currency, to: Currency): number {
-    let conversao = parseFloat(from) * parseFloat(to)
-    let conversaoQuantidade = amount * conversao
-    return conversaoQuantidade
+    const amountInicial = amount * exchangeRates[from]
+
+    const amountConvertido = amountInicial / exchangeRates[to]
+
+    console.log(`${amount} ${from} = ${amountConvertido.toFixed(2)} ${to}`);
+    
+    return amountConvertido
 }
+
+convertCurrency(100, Currency.USD, Currency.BRL)
 
