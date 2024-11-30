@@ -1,4 +1,5 @@
 import { v4 as uuid } from 'uuid'
+import { aplicarDesconto } from './desconto'
 
 interface Produto {
     id: string
@@ -82,16 +83,14 @@ inventario.getValorTotal()
 
 inventario.removerProduto('idProduto3')
 
-// Listando todos os produtos cadastrados após excluir o Produto3.
+inventario.listarProdutos()
+inventario.getValorTotal()
+
+// Testando as função de desconto.
+
+aplicarDesconto([produto1, produto2], 20)
 
 inventario.listarProdutos()
-
-// Imprimindo o valor total do inventário após excluir o Produto3.
-
 inventario.getValorTotal()
 
 export { Produto }
-export { Inventario }
-export { produto1 }
-export { produto2 }
-export { produto3 }

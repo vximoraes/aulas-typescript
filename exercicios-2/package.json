@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/usuario.ts",
+    "dev": "nodemon src/inventario.ts",
     "start": "node dist/index.js",
     "build": "tsc"
   },
@@ -13,6 +13,7 @@
   "description": "",
   "dependencies": {
     "email-validator": "^2.0.4",
+    "nodemon": "^3.1.7",
     "password-validator": "^5.3.0",
     "ts-node": "^10.9.2",
     "uuid": "^11.0.3",
