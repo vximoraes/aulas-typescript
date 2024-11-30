@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/inventario.ts",
+    "dev": "nodemon src/conversor.ts",
     "start": "node dist/index.js",
     "build": "tsc"
   },
