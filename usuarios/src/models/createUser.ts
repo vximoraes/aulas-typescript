@@ -1,4 +1,3 @@
-import { v4 as uuid } from 'uuid'
 import { Role } from '../types/Role'
 import { User } from '../models/User'
 import { users } from '../data/users'
