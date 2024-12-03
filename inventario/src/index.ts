@@ -6,9 +6,10 @@ import { Produto } from './models/Produto'
 import { produtos } from './data/produtos'
 import { Inventario } from './models/Inventario'
 
+// Novo objeto da classe Inventário.
 const inventario = new Inventario()
 
-// Adicionando 3 produtos ao inventário.
+// Adicionando 5 produtos ao inventário.
 const produto1: Produto = {
     id: uuid(),
     nome: 'Produto 1',
@@ -33,7 +34,7 @@ const produto3: Produto = {
     categoria: Categorias.ELETRONICOS
 }
 
-let produto4 = { 
+const produto4 = { 
     id:  uuid(),
     nome: 'Produto 4', 
     preco: 40.40, 
@@ -41,7 +42,7 @@ let produto4 = {
     categoria: Categorias.ALIMENTOS 
 }
 
-let produto5 = { 
+const produto5 = { 
     id:  uuid(), 
     nome: 'Produto 5', 
     preco: 5.50, 
