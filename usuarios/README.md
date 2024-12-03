@@ -1,4 +1,3 @@
-# Exercícios para os dias 25/11/2024
 ## 1) Gerenciamento de Usuários
 Crie uma aplicação que gerencie usuários e seus papéis (roles).
 
