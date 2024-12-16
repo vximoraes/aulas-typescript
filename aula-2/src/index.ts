@@ -26,8 +26,6 @@ let meusProdutos: Produto[] = [
 console.log(meusProdutos.length)
 console.log(meusProdutos)
 
-//meusProdutos.forEach(produto => console.log(produto.descricao))
-
 // ----------------------------------------------------------------
 
 let produtosSelecionados: Produto[] = meusProdutos.filter(produto => produto.preco >= 2)
