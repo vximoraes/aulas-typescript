@@ -22,8 +22,11 @@ function criarTabelaUsuarios() {
     })
 }
 
-function inserirUsuarios() {
-
+function inserirUsuarios(nome: string, email: string, senha: string) {
+    const query = `
+    INSERT INTO usuarios (nome, email, senha) 
+    VALUES (?, ?, ?)
+    `
 }
 
 function listarTodosUsuarios() {
